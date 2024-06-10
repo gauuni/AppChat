@@ -30,8 +30,11 @@ class HomeCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func binding(people: People) {
-        imgViewAvatar.image = UIImage(named: people.avatar)
+    func binding(people: Person) {
+        if let avatar = people.avatar {
+            imgViewAvatar.image = UIImage(named: avatar)
+        }
+        
         lblName.text = people.name
         
     }

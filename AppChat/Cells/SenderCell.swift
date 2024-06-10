@@ -7,11 +7,26 @@
 
 import UIKit
 
-class SenderCell: UICollectionViewCell {
-
+class BaseMessageCell: UICollectionViewCell {
+    @IBOutlet weak var viewBg: UIView!
+    @IBOutlet weak var lblText: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        lblText.numberOfLines = 0
+        viewBg.backgroundColor = .clear
+    }
+    
+    func binding(data: Message) {
+        lblText.text = data.content
+    }
+}
+
+class SenderCell: BaseMessageCell {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 
 }

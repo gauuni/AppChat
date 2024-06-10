@@ -7,21 +7,16 @@
 
 import UIKit
 
-struct People {
-    let avatar: String
-    let name: String
-}
-
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let homeCellIdentifier = "HomeCell"
     
     var people = [
-        People(avatar: "a1", name: "Nguyen"),
-        People(avatar: "a2", name: "Long"),
-        People(avatar: "a3", name: "Nam"),
-        People(avatar: "a4", name: "Vy")
+        Person(avatar: "a1", name: "Nguyen"),
+        Person(avatar: "a2", name: "Long"),
+        Person(avatar: "a3", name: "Nam"),
+        Person(avatar: "a4", name: "Vy")
     ]
     
     override func viewDidLoad() {
@@ -50,10 +45,18 @@ extension HomeViewController: UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         return cell
     }
+    
 }
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44+16
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
+        let person = people[indexPath.row]
+        vc.person = person
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

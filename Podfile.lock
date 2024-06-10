@@ -1,0 +1,24 @@
+PODS:
+  - GrowingTextView (0.7.2)
+  - IQKeyboardManager (6.5.19)
+  - UIColor_Hex_Swift (5.1.9)
+
+DEPENDENCIES:
+  - GrowingTextView (= 0.7.2)
+  - IQKeyboardManager
+  - UIColor_Hex_Swift (~> 5.1.9)
+
+SPEC REPOS:
+  trunk:
+    - GrowingTextView
+    - IQKeyboardManager
+    - UIColor_Hex_Swift
+
+SPEC CHECKSUMS:
+  GrowingTextView: 876bf42005b5e4a4fd740597db12caaf41f0fe6c
+  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
+  UIColor_Hex_Swift: 20cb4e8d51b63e168a9da6933bc5d39cd8fb4ab5
+
+PODFILE CHECKSUM: b549e03b1e231b5005aee6bc5997c627bc9fcbf2
+
+COCOAPODS: 1.15.2
